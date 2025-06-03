@@ -5,14 +5,31 @@ import 'package:flutter/material.dart';
 import 'screen_saver.dart';
 import 'screen_saver_media.dart';
 
+/// A widget that wraps around a child and shows a screen saver
+/// after a period of user inactivity.
+///
+/// It listens for user interaction and resets the inactivity timer.
+/// If the user is inactive for [inactivityDuration], it activates a screen saver.
 class ScreenSaverWrapper extends StatefulWidget {
+  /// The main content of the app over which the screen saver will appear.
   final Widget child;
+
+  /// A list of media items to display in the screen saver.
   final List<ScreenSaverMedia> mediaItems;
+
+  /// The duration of inactivity after which the screen saver activates.
   final Duration inactivityDuration;
+
+  /// Duration between slide transitions in the screen saver.
   final Duration slideDuration;
+
+  /// The animation curve for slide transitions.
   final Curve slideCurve;
+
+  /// The background color of the screen saver.
   final Color backgroundColor;
 
+  /// Creates a [ScreenSaverWrapper] widget.
   const ScreenSaverWrapper({
     super.key,
     required this.child,
@@ -37,6 +54,7 @@ class _ScreenSaverWrapperState extends State<ScreenSaverWrapper> {
     _resetTimer();
   }
 
+  /// Resets the inactivity timer and starts it again.
   void _resetTimer() {
     _inactivityTimer?.cancel();
     _inactivityTimer = Timer(widget.inactivityDuration, () {
@@ -46,6 +64,7 @@ class _ScreenSaverWrapperState extends State<ScreenSaverWrapper> {
     });
   }
 
+  /// Handles user interaction and resets the screen saver state.
   void _handleUserInteraction([_]) {
     if (_screenSaverActive) {
       setState(() => _screenSaverActive = false);
