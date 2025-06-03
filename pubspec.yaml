@@ -1,7 +1,8 @@
 name: screensaver
 description: "Flutter Screensaver"
-version: 0.0.1
-homepage:
+version: 1.0.0
+homepage: https://sawin.com.np
+repository: https://github.com/sawin0/screensaver
 
 environment:
   sdk: ^3.8.0
