@@ -1,3 +1,7 @@
+## 1.0.2
+
+* Add documentation for the member.
+
 ## 1.0.1
 
 * Remove unsupported platforms
