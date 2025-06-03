@@ -1,6 +1,6 @@
 name: screensaver
 description: "A customizable screen saver package that activates after a period of inactivity. Supports images, GIFs, and videos."
-version: 1.0.0
+version: 1.0.1
 homepage: https://sawin.com.np
 repository: https://github.com/sawin0/screensaver
 
