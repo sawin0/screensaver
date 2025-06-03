@@ -1,4 +1,4 @@
-# Flutter Screen Saver
+# Screen Saver
 
 A customizable screen saver package that activates after a period of inactivity. Supports images, GIFs, and videos.
 

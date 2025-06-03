@@ -1,5 +1,5 @@
 name: screensaver
-description: "Flutter Screensaver"
+description: "A customizable screen saver package that activates after a period of inactivity. Supports images, GIFs, and videos."
 version: 1.0.0
 homepage: https://sawin.com.np
 repository: https://github.com/sawin0/screensaver
