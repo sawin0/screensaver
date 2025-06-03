@@ -5,13 +5,28 @@ import 'package:flutter/material.dart';
 import 'media_display.dart';
 import 'screen_saver_media.dart';
 
+/// A widget that displays a full-screen slideshow of media items
+/// (images, GIFs, or videos) after a period of inactivity.
+///
+/// The [ScreenSaver] switches between media items automatically
+/// at the interval defined by [slideDuration].
 class ScreenSaver extends StatefulWidget {
+  /// A list of media items to display in the screen saver.
   final List<ScreenSaverMedia> mediaItems;
+
+  /// Duration between slide transitions.
   final Duration slideDuration;
+
+  /// Animation curve used when transitioning between slides.
   final Curve slideCurve;
+
+  /// Background color of the screen saver.
   final Color backgroundColor;
+
+  /// Callback triggered when the screen saver is tapped.
   final VoidCallback onTap;
 
+  /// Creates a [ScreenSaver] widget.
   const ScreenSaver({
     super.key,
     required this.mediaItems,
@@ -37,6 +52,7 @@ class _ScreenSaverState extends State<ScreenSaver> {
     _startSlideshow();
   }
 
+  /// Starts the slideshow by scheduling periodic page changes.
   void _startSlideshow() {
     _slideTimer = Timer.periodic(widget.slideDuration, (_) {
       if (_currentIndex < widget.mediaItems.length - 1) {
