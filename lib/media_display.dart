@@ -3,9 +3,12 @@ import 'package:video_player/video_player.dart';
 
 import 'screen_saver_media.dart';
 
+/// A widget that displays media (image, GIF, or video) based on the [ScreenSaverMedia] type.
 class MediaDisplay extends StatefulWidget {
+  /// The media to display.
   final ScreenSaverMedia media;
 
+  /// Creates a [MediaDisplay] widget.
   const MediaDisplay({super.key, required this.media});
 
   @override
@@ -24,6 +27,7 @@ class _MediaDisplayState extends State<MediaDisplay> {
     }
   }
 
+  /// Initializes the video player for video media types.
   void _initializeVideo() async {
     try {
       setState(() => _isInitializing = true);
@@ -55,6 +59,7 @@ class _MediaDisplayState extends State<MediaDisplay> {
     }
   }
 
+  /// Builds an image widget based on the media source.
   Widget _buildImage() {
     return widget.media.source.startsWith('http')
         ? Image.network(
@@ -69,6 +74,7 @@ class _MediaDisplayState extends State<MediaDisplay> {
           );
   }
 
+  /// Builds a GIF widget from asset source.
   Widget _buildGif() {
     return Image.asset(
       widget.media.source,
@@ -84,6 +90,7 @@ class _MediaDisplayState extends State<MediaDisplay> {
     );
   }
 
+  /// Builds a video widget using the initialized video controller.
   Widget _buildVideo() {
     if (_isInitializing || _videoController == null) {
       return _buildPlaceholder();
@@ -99,6 +106,7 @@ class _MediaDisplayState extends State<MediaDisplay> {
     );
   }
 
+  /// Builds a placeholder widget to show when media fails to load.
   Widget _buildPlaceholder() {
     return Center(
       child: widget.media.placeholder != null
