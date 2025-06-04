@@ -2,6 +2,12 @@
 
 A customizable screen saver package that activates after a period of inactivity. Supports images, GIFs, and videos.
 
+## 📽️ Demo
+
+[![Watch the demo](https://img.youtube.com/vi/DQh-tiM8e5E/0.jpg)](https://youtube.com/shorts/DQh-tiM8e5E?feature=share)
+
+Click the image above to watch a quick demo of the screen saver package in action!
+
 ## Features
 
 - Activates after configurable inactivity period
@@ -16,4 +22,4 @@ Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  flutter_screen_saver: ^1.0.0
+  screensaver: ^1.0.2
