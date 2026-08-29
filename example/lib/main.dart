@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
 
           // Network image
           ScreenSaverMedia.image(
-            'https://missionhimalayatreks.com/wp-content/uploads/2023/12/Natural-beauty-of-Nepal.webp',
+            'https://iili.io/CpO3uCN.webp',
             placeholder:
                 'assets/images/syambhu.jpg', // Fallback if network fails
           ),
