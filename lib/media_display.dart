@@ -1,3 +1,4 @@
+import 'package:extended_image/extended_image.dart' hide MediaType;
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
@@ -62,31 +63,21 @@ class _MediaDisplayState extends State<MediaDisplay> {
   /// Builds an image widget based on the media source.
   Widget _buildImage() {
     return widget.media.source.startsWith('http')
-        ? Image.network(
+        ? ExtendedImage.network(
             widget.media.source,
             fit: BoxFit.cover,
-            errorBuilder: (_, __, ___) => _buildPlaceholder(),
           )
-        : Image.asset(
+        : ExtendedImage.asset(
             widget.media.source,
             fit: BoxFit.cover,
-            errorBuilder: (_, __, ___) => _buildPlaceholder(),
           );
   }
 
   /// Builds a GIF widget from asset source.
   Widget _buildGif() {
-    return Image.asset(
+    return ExtendedImage.asset(
       widget.media.source,
       fit: BoxFit.cover,
-      frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
-        if (wasSynchronouslyLoaded) return child;
-        return AnimatedSwitcher(
-          duration: const Duration(milliseconds: 200),
-          child: frame != null ? child : _buildPlaceholder(),
-        );
-      },
-      errorBuilder: (_, __, ___) => _buildPlaceholder(),
     );
   }
 
@@ -110,7 +101,7 @@ class _MediaDisplayState extends State<MediaDisplay> {
   Widget _buildPlaceholder() {
     return Center(
       child: widget.media.placeholder != null
-          ? Image.asset(widget.media.placeholder!, fit: BoxFit.cover)
+          ? ExtendedImage.asset(widget.media.placeholder!, fit: BoxFit.cover)
           : const Icon(Icons.broken_image, size: 64, color: Colors.white24),
     );
   }
