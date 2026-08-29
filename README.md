@@ -23,7 +23,7 @@ Add the package to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  screensaver: ^1.0.4
+  screensaver: ^1.0.5
 ```
 
 Then run:

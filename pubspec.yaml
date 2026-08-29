@@ -2,7 +2,7 @@ name: screensaver
 description: >
   A customizable Flutter screen saver plugin that activates after user inactivity.
   Supports displaying images, animated GIFs, and videos — ideal for kiosk and display apps.
-version: 1.0.4
+version: 1.0.5
 homepage: https://sawin.com.np
 repository: https://github.com/sawin0/screensaver
 
