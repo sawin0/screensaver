@@ -66,6 +66,7 @@ class _MediaDisplayState extends State<MediaDisplay> {
         ? ExtendedImage.network(
             widget.media.source,
             fit: BoxFit.cover,
+            cache: widget.media.allowCachingNetworkImage ?? false,
           )
         : ExtendedImage.asset(
             widget.media.source,
