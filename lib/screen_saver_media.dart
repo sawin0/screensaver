@@ -21,21 +21,30 @@ class ScreenSaverMedia {
   /// The source path or URL of the media.
   final String source;
 
+  /// Wether to cache network images
+  final bool? allowCachingNetworkImage;
+
   /// An optional placeholder image asset path to use if the media fails to load.
   final String? placeholder;
 
   /// Creates a [ScreenSaverMedia] with the given [type], [source], and optional [placeholder].
-  const ScreenSaverMedia(this.type, this.source, {this.placeholder});
+  const ScreenSaverMedia(this.type, this.source, {this.placeholder})
+    : allowCachingNetworkImage = null;
 
   /// Creates an image media item with the given [source] and optional [placeholder].
-  const ScreenSaverMedia.image(this.source, {this.placeholder})
-    : type = MediaType.image;
+  const ScreenSaverMedia.image(
+    this.source, {
+    this.placeholder,
+    this.allowCachingNetworkImage = false,
+  }) : type = MediaType.image;
 
   /// Creates a gif media item with the given [source] and optional [placeholder].
   const ScreenSaverMedia.gif(this.source, {this.placeholder})
-    : type = MediaType.gif;
+    : type = MediaType.gif,
+      allowCachingNetworkImage = null;
 
   /// Creates a video media item with the given [source] and optional [placeholder].
   const ScreenSaverMedia.video(this.source, {this.placeholder})
-    : type = MediaType.video;
+    : type = MediaType.video,
+      allowCachingNetworkImage = null;
 }
